@@ -12,3 +12,19 @@ export const searchItem = () => {
         params:''
     })
 }
+
+export const queryHomepageData = () => (
+    fetch({
+        url:'/mock/home.json',
+        method:'GET',
+        params:''
+    })
+)
+
+export const queryMoreArticle = (params) => (
+    fetch({
+        url:'/mock/homeList.json',
+        method:'GET',
+        params:params
+    })
+)

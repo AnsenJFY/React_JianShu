@@ -2,12 +2,12 @@ import {createGlobalStyle} from 'styled-components';
 
 export const GlobalIconFont = createGlobalStyle`
   @font-face {font-family: "iconfont";
-    src: url('./iconfont.eot?t=1548205769618'); /* IE9 */
-    src: url('./iconfont.eot?t=1548205769618#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPMAAsAAAAAB9wAAAN/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDGIJ8ATYCJAMQCwoABCAFhG0HRxvtBiMRJnTsTPbPA9ttygIqdMPOB8+e8qxhizbDZGAlNIPF2OC+BxHLSbNAWg7OTOxnZj/18PR4e7f7m6WWQZBBIN7mXLuXNSpCjej83qMvJANO89Q2JBRtry7VTxOva29x+VYppVLrdD/+lAlguGvAesV0iiWgCUgEPY+xIXY/hyHASS0nubuaDbEMY5QAeccu7bApN1OjFZaIlCwc5CNg1zR1Gczxvy+//LGgBMWYWLdzpY6UfZvwLT02HKuli8GMFwS4ZaBBTmAgT2m4PTrM5aQ5pbtRGFiWwlhtvRWGyO5FtuZfHihCQw4GGhNAQcxrvJ2NQ+FtOARvIWjACxlugQNDgf1oSfk8QzFXNOoTx7Q2UWw/Yvr5rAObdhiy44DcvTu0obgmnhIyLrPr0qhJycZlxh0rcuZOurXDOh+7V7dN49u3G96502jGvTKdFs3YMW74vXtNkmTBVe7ejeMax2zoevhmzRendiuTNm13yM8AF3fcTb8q45o0Gee/YslGB7cydpufcUokf4ZqGc93ylWgYv78FfMUbjwzo1Ro2SJ9g0zz0hUokG7e+g1NVycqu/zYsf27a9V8v3v3e/VifdlKlUw3SrSNxo7dKmufMmrBqVMLtEm4pLPp/FOnF6gyfbPdiR17WfICyQu9+N6Je/ZMBEGTkJqoYtIjyNtwnKrcyFrxRqfYoalwt3vpOo1U+fbdSt8zf0oPGHimaB4JyuXuk61xt1itfI2yxV+3bjLwUrJEf5Jn+pQpNQeA8EAv6Gq+7USP63KGkPuDv2Hmsn0X2sQp+U3GegPA/T+7QKLhgaEf8xuY1sz/YlqWGZUzPGZk3qa1iJE3MQoFHAf+UgniezqGmqg1CsJKFIMSlQo0K6PBWHJCwCsIEVYZcHKostxLoD+aTAwgu0kAIq49oMR2DLS4rhiM5QkEEnsHEXGjwRnROAk29DJnVBUYtaAD84fR7htZPlGB9ob9e9Gc5HzrC9mPSUjCOFu84oY8xhT/6VMRAuJ9hQ6Ow2XZ4eB9QivhIHK0UURlDwrtvgZKBQxpAjnA+AMja7cht7pQuc/foN7bQuMaXcX1BTFv7BwkQnELw1XeWumu5RTvo5cSggDCdivQQRAtZm4HjvJ+E2SJ0NAjc2hFWInayuH86vqEawDH6GWy0kw2f+4TPUqcZJUivfVOT6ObvZTTQQAA') format('woff2'),
-    url('./iconfont.woff?t=1548205769618') format('woff'),
-    url('./iconfont.ttf?t=1548205769618') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url('./iconfont.svg?t=1548205769618#iconfont') format('svg'); /* iOS 4.1- */
+    src: url('./iconfont.eot?t=1548242151497'); /* IE9 */
+    src: url('./iconfont.eot?t=1548242151497#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAASAAAsAAAAACNwAAAQyAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqEdIQwATYCJAMUCwwABCAFhG0HThvCBxFVnAfJfiTYNmnWrW+VVlGEtIxueemaD35nvSRTbGYBdEV1usJBRNv7BNEECCC4d79haZVQLqRv1vCufdu/fbPDXqdlUiJEqCT+53J68/mBjfpAuaw5rLyjXoDRBMrCPYHaYMcFUqKcgng2k3GcBgKAwxVBIFk5RVVQQoAxiQAg3bt0aoEyZYNQQxEojfKSlQLIbMigpFPodQCz/M+TN4ggSoBCxmDMLOuY3Y605/LnMWy0YTTqXQTy8TwAuHUAAxAEQABI31Jfd7AwFwQGrvQXkAaAQwkKOlYv6+eq5zEGA7FqRwZu/uEBAigIGEDkMHTGFJmWF4DnclsW661hAYVeBQsI9DHQ435xmYGPVDgOEFvepBpTS+0XmSgUoq2xUmkjuvoMm3rZr7+mbdC2fUSnG1xFuCQikYzx4Z2qpSR16phTsRe0HquHdDylr9tHff9+lVZbPU2f2mHBtG1jhur1UlJS8Aydzoyrjat4N7GmdqErX26vaTkmTgM44af51JtkjCSN4VOTqvdvxugt4rRzhAxDv4V2dYum2dQsWMx59zn3H6s3HLLboc3X6qVTfUcVm3wRtdVXtOH7/ax36hJ0an6/6vL9MHHaAmvN/Km2tQuXiRFe+arLHYIjsyIiskJj1NNVJLO+zrPSe45HZKTHnLXrNCtt0paeOrV3Z3HR+50739NHa9Oys4UuSGxWmJo2+PVKpfPOnZvHiNiVOLvOPXd+Hk3t7a81NV3iGOkY/eg7G79r13iiZvDS8TSWeGLwFac75t7xy7rTwdTQmqnrmlJaTTNau6TohT8p/fpfiAslsvSQXv7qLiYNYmFawtNGqf81B5s/jt6fvF0R8fBRF74qbxqrta+dSvLmiJ3dCvr0LnSbF+vYWjrZKu7N9bJMoVF1xqsge+C0ni7ZnbtnuZeqJHAJ+H0XTdkXq64WSwvSz2e45sEoD+muvqWFazqP1h+DAQCGfewKy/eZM+w0S0cNKArX2Xfm8Df5DuoXGtk3mSV9kytFAQDwoK5+iBr2rb/su9ajtfxPIW9ZJahKwy5brrRlsl8mK2EDVRo44K8QsvQdx2DTuhQglGxioBRcgFFSoQIZBDKiKJBTSgUu0G69yEpvimwEIMCTAGHuBZSpU8CYe6MC+QEZW3+QM48Bp26+o8inLnzVFzlhDGIIZG1NrSwnsaB8j8ml5H1S6dNn7IcsCaZmZIs7rLEfY84wMLGovwLVt6lgS87Dsmyg7dvkKElL+1Mb6boqu5Ame1UjJlMPcQTFgPAAMlKjptz6hOXev4cSFyWur+FURM9Qb5B1D0waowW609WtONfSf3CVsBCi6HFKr1EBW3hQaeYaoC0flkMS0aQ9Mq2ITtVSbXXa/IbqGXcAcMZgWZQwIhAZkUM8+ZkDkmHaPuvYUicxzzN3wGTRMht6Z/VoBAAA') format('woff2'),
+    url('./iconfont.woff?t=1548242151497') format('woff'),
+    url('./iconfont.ttf?t=1548242151497') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('./iconfont.svg?t=1548242151497#iconfont') format('svg'); /* iOS 4.1- */
   }
 
   .iconfont {
@@ -28,5 +28,9 @@ export const GlobalIconFont = createGlobalStyle`
 
   .icon-Aa:before {
     content: "\e636";
+  }
+
+  .icon-spin:before {
+    content: "\e606";
   }
 `

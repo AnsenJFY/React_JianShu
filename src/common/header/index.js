@@ -1,43 +1,62 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import { actionFunc } from './store';
 import {
   HeaderWrapper, Logo,
   Nav, NavItem,
-  NavSearch, Addition, 
-  Button, SearchWrapper, 
+  NavSearch, Addition,
+  Button, SearchWrapper,
   SearchInfo, SearchInfoTitle,
   SearchInfoSwitch, SearchInfoItem,
   SearchInfoList
 } from './style'
 
-class Header extends Component{
+class Header extends Component {
   // 函数组件
-  getListArea = () =>{
-    if(this.props.focused){
+  getListArea = () => {
+    const { 
+      focused, page, searchItemList,
+      handleMouseEnter,handleMouseLeave,
+      handleSearchChange,mouseIn,totalPage
+    } = this.props;
+    // 这里使用immutable的toJS方法依旧会报错，提示toJS is not a function
+    // const newList = searchItemList.toJS(); // 把immutable类型的数据变成普通js对象
+    const newList = JSON.parse(JSON.stringify(searchItemList)); // 临时被迫使用这种方式
+    const pageList = [];
+    if(newList.length){
+      for (let i = page * 5; i < (page + 1) * 5 ;   i++) {
+        pageList.push(
+          <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+        )
+      }
+    }
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={()=>{handleSearchChange(page,totalPage,this.spinIcon)}}
+            >
+              <i ref={(icon)=>{this.spinIcon = icon}} className="iconfont spin">&#xe606;</i>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {
-              this.props.searchItemList.map((item,index)=>{
-                return (
-                  <SearchInfoItem key={item}>{item}</SearchInfoItem>
-                )
-              })
-            }
+            {pageList}
           </SearchInfoList>
         </SearchInfo>
       )
-    }else{
+    } else {
       return null
     }
   }
-  render(){
+  render() {
+    const { focused, handleInputFocus, handleInputBlur,searchItemList } = this.props
     return (
       <HeaderWrapper>
         <Logo></Logo>
@@ -50,17 +69,17 @@ class Header extends Component{
           </NavItem>
           <SearchWrapper>
             <CSSTransition
-              in={this.props.focused}
+              in={focused}
               timeout={200}
               classNames='slide'
             >
               <NavSearch
-                className={this.props.focused ? 'focused' : ''}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}
+                className={focused ? 'focused' : ''}
+                onFocus={()=>handleInputFocus(searchItemList)}
+                onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe614;</i>
+            <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe614;</i>
             {this.getListArea()}
           </SearchWrapper>
           <Addition>
@@ -76,8 +95,10 @@ class Header extends Component{
 const mapStateToProps = (state) => {
   return {
     focused: state.getIn(['header', 'focused']),
-    searchItemList:state.getIn(['header', 'searchItemList'])
-    // focused:state.get('header').get('focused')
+    mouseIn:state.getIn(['header','mouseIn']),
+    searchItemList: state.getIn(['header', 'searchItemList']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage'])
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -85,9 +106,24 @@ const mapDispatchToProps = (dispatch) => {
     handleInputBlur() {
       dispatch(actionFunc.searchBlur())
     },
-    handleInputFocus() {
-      dispatch(actionFunc.getSearchItem())
+    handleInputFocus(list) {
+      list.size === 0 && dispatch(actionFunc.getSearchItem())
       dispatch(actionFunc.searchFocus())
+    },
+    handleMouseEnter() {
+      dispatch(actionFunc.mouseEnter())
+    },
+    handleMouseLeave() {
+      dispatch(actionFunc.mouseLeave())
+    },
+    handleSearchChange(page,totalPage,spin){
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
+      spin.style.transform = `rotate(${originAngle+360}deg)`;
+      if(page < totalPage){
+        dispatch(actionFunc.searchChange(++page))
+      }else{
+        dispatch(actionFunc.searchChange(0))
+      }
     }
   }
 }
