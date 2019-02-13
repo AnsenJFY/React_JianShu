@@ -1,29 +1,33 @@
 import React, { Component, Fragment } from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import Header from './common/header';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { GlobalStyle } from './style';
-import {GlobalIconFont} from './statics/icon/iconfont';
+import { GlobalIconFont } from './statics/icon/iconfont';
 import Home from './pages/home';
 import Detail from './pages/detail';
 import store from './store';
+// import {Router as router} from './router'
 
 class App extends Component {
   render() {
     return (
       <Fragment>
         <GlobalStyle />
-        <GlobalIconFont/>
+        <GlobalIconFont />
         <Provider store={store}>
-          <Fragment>
-            <Header/>
-            <BrowserRouter>
-              <Fragment>
-                <Route path='/' exact component={Home}></Route>
-                <Route path='/detail' exact component={Detail }></Route>
-              </Fragment>
-            </BrowserRouter>
-          </Fragment>
+          <BrowserRouter>
+            <Fragment>
+              <Header />
+              {/* {
+                router.map(item=>{
+                  return <Route path={item.path} component={item.component}></Route>
+                })
+              } */}
+              <Route path='/' exact component={Home}></Route>
+              <Route path='/detail' exact component={Detail}></Route>
+            </Fragment>
+          </BrowserRouter>
         </Provider>
       </Fragment>
     );

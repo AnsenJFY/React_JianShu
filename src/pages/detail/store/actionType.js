@@ -1,0 +1,1 @@
+export const GET_DETAIL_DATA = 'content/GET_DETAIL_DATA';

@@ -5,13 +5,13 @@ const fetch = Axios.create({
     headers:{},
 })
 
-export const searchItem = () => {
-    return fetch({
+export const searchItem = () => (
+    fetch({
         url:'/mock/search_Item.json',
         method:'GET',
         params:''
     })
-}
+)
 
 export const queryHomepageData = () => (
     fetch({
@@ -24,6 +24,14 @@ export const queryHomepageData = () => (
 export const queryMoreArticle = (params) => (
     fetch({
         url:'/mock/homeList.json',
+        method:'GET',
+        params:params
+    })
+)
+
+export const queryDetailContent = (params)=>(
+    fetch({
+        url:'/mock/detailContent.json',
         method:'GET',
         params:params
     })
