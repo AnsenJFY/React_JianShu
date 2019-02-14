@@ -11,7 +11,7 @@ class List extends PureComponent {
       <Fragment>
         {articleList.map((item, index) => {
           return (
-            <Link to="/detail">
+            <Link key={index} to={`/detail/id=${item.get('id')}`}>
               <ListItem key={index}>
                 <img
                   className="list-img"

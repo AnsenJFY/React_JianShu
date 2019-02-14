@@ -13,6 +13,7 @@ export const HomeLeft = styled.div`
   .banner-img{
     width:625px;
     height:270px;
+    border-radius:6px;
   }
 `
 export const HomeRight = styled.div`
@@ -86,6 +87,7 @@ export const RecommendItem = styled.div`
   height: 50px;
 	background-image: url(${props => props.imgURL});
   background-size:contain;
+  margin-bottom: 6px;
 `
 
 // 推荐作者

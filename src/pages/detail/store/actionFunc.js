@@ -8,9 +8,11 @@ export const changeDetial = (title, content) => ({
   content
 })
 
-export const getDetailContent = () => {
+export const getDetailContent = (id) => {
   return (dispatch) => [
-    queryDetailContent().then(res => {
+    queryDetailContent({
+      id
+    }).then(res => {
       const data  = res.data.data;
       dispatch(changeDetial(data.title, data.content))
     })

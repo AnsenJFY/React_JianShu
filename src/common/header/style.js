@@ -3,13 +3,14 @@ import logoPic from '../../statics/images/logo.png'
 
 export const HeaderWrapper = styled.div`
   position:relative;
-  height:56px;
+  height:58px;
   border-bottom:1px solid #f0f0f0;
+  z-index: 1;
 `
 
 export const Logo = styled.div`
   position:absolute;
-  height:56px;
+  height:58px;
   top:0;
   left:0;
   width:100px;
@@ -27,7 +28,7 @@ export const Nav = styled.div`
 `
 
 export const NavItem = styled.div`
-  line-height:56px;
+  line-height:58px;
   padding:0 15px;
   font-size:17px;
   color:#333;
@@ -35,6 +36,8 @@ export const NavItem = styled.div`
     float:left;
   }
   &.right{
+    width:80px;
+    height:38px;
     float:right;
     color:#969696;
   }
@@ -100,7 +103,7 @@ export const SearchInfo = styled.div`
   position:absolute;
   margin-left:20px;
   left:0;
-  top:56px;
+  top:58px;
   width:210px;
   padding:0 20px;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
@@ -146,7 +149,7 @@ export const Addition = styled.div`
   position:absolute;
   right:0;
   top:0;
-  height:56px;
+  height:58px;
 `
 
 export const Button = styled.div`
